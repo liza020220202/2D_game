@@ -4,7 +4,7 @@ import pygame
 
 class Hero(Sprit):
     def __init__(self, startx, starty):
-        super().__init__('hero1.png', startx, starty)
+        super().__init__('hero11.png', startx, starty)
 
         self.stand_image = self.image
 
@@ -27,7 +27,7 @@ class Hero(Sprit):
             self.vertical_speed = -self.jump
         if self.vertical_speed < 10 and not onground:
             self.vertical_speed += self.gravity
-        if self.vertical_speed > 0 and onground:
+        if self.vertical_speed >= 0 and onground:
             self.vertical_speed = 0
 
         self.move(horizontal_speed, self.vertical_speed)
